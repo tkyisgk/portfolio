@@ -1,0 +1,40 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt -p 3001",
+    "devIp": "cross-env HOST=192.168.100.24 PORT=3001 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "contentful": "^7.0.5",
+    "dotenv": "^6.1.0",
+    "gsap": "^2.0.1",
+    "nuxt": "^1.0.0",
+    "nuxt-device-detect": "^1.1.1",
+    "nuxt-user-agent": "^1.0.2",
+    "pixi-filters": "^2.6.1",
+    "pixi.js": "^4.8.2",
+    "smooth-scrollbar": "^8.3.0",
+    "vue-markdown": "^2.2.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.0",
+    "nuxt-sass-resources-loader": "^2.0.2",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.0.3"
+  }
+}

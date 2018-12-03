@@ -1,0 +1,12 @@
+/**
+ * 画面幅に応じて、フォントサイズを設定
+ */
+@function get_vw($size, $viewport:1280) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fitFontSize($font_size:10) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}

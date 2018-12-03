@@ -1,0 +1,74 @@
+// ! Global variables
+// [$]: value
+// [@]: 関連ファイルパス
+// [!]: ヒント
+// ------------------------------
+
+// ### Breakpoints
+// [@]: @mixins/_mediaquery
+// [!]: @include mq(key) {} の引数のdefaultは[sm]です。
+// [!]: 設定したkeyが読み込み時の引数指定名です。
+
+// [@]: @gridlex/_gridlex-vars
+// [!]: lg,md,sm,xsの値はグリッドシステムにも共通で使用されます。
+
+$breakpoints: (
+	'lg': 'screen and (max-width: 1280px)',     // large size
+	'md': 'screen and (max-width: 960px)',     // medium size
+	'sm': 'screen and (max-width: 768px)',      // small portrait size
+	'xs': 'screen and (max-width: 568px)',      // Extra small size
+	'lg-over': 'screen and (min-width: 1281px)',// over large size
+) !default;
+
+// color parete
+$red        : #e43a19;
+$blue       : #111f4d;
+$green      : #00975B;
+$yellow     : #AA9E85;
+$light-green: #19E492;
+$white      : #FFFFFF;
+$grey-01    : #f2f4f7;
+$grey_02    : #dadada;
+$grey_03    : #969EAA;
+$grey_04    : #1C1C1C;
+$black      : #010000;
+
+// ## Colors
+// ++ Text colors
+$text-base       : #dadada !default;
+$text-sub-base   : #8D1111 !default;
+$text-inverse    : #000000 !default;
+
+// ++ Link colors
+$link-base       : #dadada !default;
+$link-inverse    : #9ae7f0 !default;
+
+// ++ Background colors
+// $bg-base         : #3D3D3D !default;
+$bg-base         : #131313 !default;
+$bg-inverse      : #c7c7c7 !default;
+
+// ++ Brand colors
+$brand-primary   : #AA9E85 !default;
+$brand-secondary : #5bc0de !default;
+
+// ++ State colors
+$state-warning   : #f0ad4e !default;
+$state-danger    : #d9534f !default;
+
+
+// ## Typography
+
+// ** Site base font size
+// [@]: @mixins/_font-size
+// [!]: フォントサイズの計算の基準とするの数値を指定
+$base-font-size: 10;
+// ** Site base font type
+// [@]: @mixins/_font-size
+// [!]: フォントサイズの単位を指定
+// [!]: 設定できる値の種類 [ rem | px | em | per ]
+$base-font-type: rem;
+
+// ++ Base font family sets
+$base-font-family: "notoSans", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
+$accent-font-family: "futura", "notoSans", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;

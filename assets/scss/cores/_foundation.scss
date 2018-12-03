@@ -1,0 +1,59 @@
+/* scaffold */
+html {
+	width: 100%;
+	height: 100%;
+	font-size: $base-font-size / 16 * 100%;
+	z-index: 0;
+}
+body {
+	font-family: $base-font-family;
+	font-weight: 500;
+	font-size: 1.4rem;
+	color: $text-base;
+	-webkit-text-size-adjust: 100%;
+	background: radial-gradient(ellipse farthest-side, #1C1C1C, #000000);
+	pointer-events: auto;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+a {
+	text-decoration: none;
+	color: $link-base;
+	cursor: pointer;
+}
+img {
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+small {
+	font-size: 100%;
+}
+input,select,button,optgroup,textarea {
+	margin: 0;
+	font-family: $base-font-family;
+	color: inherit;
+}
+button {
+  font-family: $base-font-family;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+// smooth-scrollBarのスタイル変更
+.container {
+	.scrollbar-track-y {
+		background: transparent;
+	}
+	.scrollbar-thumb {
+		left: -2px;
+		width: 8px;
+		background: rgba($blue, 0.8);
+		border-radius: 8px;
+	}
+}

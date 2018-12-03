@@ -1,0 +1,11 @@
+// フェードアニメーション用
+.anime-fadeIn_s {
+  display: block;
+  opacity: 0;
+  transform: translateY(14px);
+}
+.anime-fadeIn_m {
+  display: block;
+  opacity: 0;
+  transform: translateY(62px);
+}
