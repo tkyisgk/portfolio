@@ -15,10 +15,10 @@ export const imgLoad = Vue.mixin({
       img.src = src
     },
     $loopImagesOnLoad (array, func = null) {
-      const image = new Image();
-      image.src = array[this.imagesNum];
+      const image = new Image()
+      image.src = array[this.imagesNum]
       image.onload = () => {
-        this.imagesNum++;
+        this.imagesNum++
         if(array.length !== this.imagesNum){
           this.$loopImagesOnLoad(array, func)
         } else {

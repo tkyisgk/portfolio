@@ -45,105 +45,110 @@
 
 <script>
 // components
-import Article from "~/components/Article.vue";
+import Article from "~/components/Article.vue"
 
 // library
-import { mapGetters } from "vuex";
-import { TweenMax, Power3, Expo } from "gsap";
-import Scrollbar from "smooth-scrollbar";
+import { mapGetters } from "vuex"
+import { TweenMax, Power3, Expo } from "gsap"
+import Scrollbar from "smooth-scrollbar"
 
 export default {
   components: {
     Article
   },
-  props: ["worksData", "activeWorkIndex", "callBack"],
+  props: [
+    "worksData",
+    "activeWorkIndex",
+    "callBack"
+  ],
   data() {
     return {
       workData: {},
       targetIndex: 0,
-      maskTitle: ""
-    };
+      maskTitle: "",
+      smoothScrollContainer: "",
+    }
   },
-  watch: {},
   created() {
-    this.setIndex();
-    this.initData();
+    this.setIndex()
+    this.initData()
   },
   mounted() {
-    this.openAnime();
-    this.setDeviceHeight();
-    this.initSmoothScroll();
+    this.openAnime()
+    this.setDeviceHeight()
+    this.initSmoothScroll()
   },
   methods: {
     setIndex() {
-      this.targetIndex = this.activeWorkIndex;
+      this.targetIndex = this.activeWorkIndex
     },
     initData() {
-      this.workData = this.worksData[this.targetIndex];
-      this.setTitle();
+      this.workData = this.worksData[this.targetIndex]
+      this.setTitle()
     },
     setTitle() {
-      this.maskTitle = this.worksData[this.targetIndex]["fields"]["title"];
+      this.maskTitle = this.worksData[this.targetIndex]["fields"]["title"]
     },
     prevData() {
       if (this.targetIndex === 0) {
-        this.targetIndex = this.worksData.length - 1;
+        this.targetIndex = this.worksData.length - 1
       } else {
-        this.targetIndex--;
+        this.targetIndex--
       }
-      this.setTitle();
-      this.openAnime(this.initData);
+      this.setTitle()
+      this.openAnime(this.initData)
     },
     nextData() {
       if (this.targetIndex === this.worksData.length - 1) {
-        this.targetIndex = 0;
+        this.targetIndex = 0
       } else {
-        this.targetIndex++;
+        this.targetIndex++
       }
-      this.setTitle();
-      this.openAnime(this.initData);
+      this.setTitle()
+      this.openAnime(this.initData)
     },
     openAnime(callback = null) {
-      const maskList = this.$refs.masks.querySelectorAll(".mask");
+      const maskList = this.$refs.masks.querySelectorAll(".mask")
 
       const showInner = () => {
         TweenMax.set(this.$refs.inner, {
           opacity: 1,
           onComplete: () => {
-            if (callback !== null) callback();
-            hideMasks();
+            if (callback !== null) callback()
+            this.scrollTop()
+            hideMasks()
           }
-        });
-      };
+        })
+      }
       const hideMasks = () => {
         TweenMax.to(maskList, 0.6, {
           y: "+=100%",
           delay: 1,
           ease: Power3.easeIn,
           onComplete: () => {
-            unvisibleMasks();
-            showBtns();
+            unvisibleMasks()
+            showBtns()
           }
-        });
-      };
+        })
+      }
       const visibleMasks = () => {
         TweenMax.set(this.$refs.masks, {
           display: "block"
-        });
-      };
+        })
+      }
       const unvisibleMasks = () => {
         TweenMax.set(this.$refs.masks, {
           display: "none"
-        });
-      };
+        })
+      }
       const showBtns = () => {
-        const controllers = this.$refs.controllers.querySelectorAll("button");
+        const controllers = this.$refs.controllers.querySelectorAll("button")
 
-        this.$fadeInAnime(controllers);
-      };
+        this.$fadeInAnime(controllers)
+      }
 
       requestAnimationFrame(() => {
-        visibleMasks();
+        visibleMasks()
 
         TweenMax.staggerTo(
           maskList,
@@ -154,24 +159,24 @@ export default {
           },
           0.1,
           showInner
-        );
-      });
+        )
+      })
     },
     closeAnime() {
-      this.maskTitle = "";
+      this.maskTitle = ""
 
       const hideBtns = () => {
-        const controllers = this.$refs.controllers.querySelectorAll("button");
+        const controllers = this.$refs.controllers.querySelectorAll("button")
 
-        this.$fadeOutAnime(controllers);
-      };
+        this.$fadeOutAnime(controllers)
+      }
 
       const hideInner = () => {
         TweenMax.set(this.$refs.inner, {
           opacity: 0,
           onComplete: () => moveMasks()
-        });
-      };
+        })
+      }
 
       const moveMasks = () => {
         TweenMax.staggerTo(
@@ -183,25 +188,25 @@ export default {
           },
           0.1,
           hideWorkDetail
-        );
-      };
+        )
+      }
 
       const hideWorkDetail = () => {
-        this.$emit(this.callBack);
-      };
+        this.$emit(this.callBack)
+      }
 
       const visibleMasks = () => {
         TweenMax.set(this.$refs.masks, {
           display: "block"
-        });
+        })
         TweenMax.set(this.$refs.masks.querySelectorAll(".mask"), {
           y: "-200%"
-        });
-      };
+        })
+      }
 
       requestAnimationFrame(() => {
-        visibleMasks();
-        hideBtns();
+        visibleMasks()
+        hideBtns()
 
         TweenMax.staggerTo(
           this.$refs.masks.querySelectorAll(".mask"),
@@ -212,41 +217,44 @@ export default {
           },
           0.1,
           hideInner
-        );
-      });
+        )
+      })
     },
     initSmoothScroll() {
       const scrollOptions = {
         damping: this.$device.isMobile ? 0.2 : 0.8,
         renderByPixels: false,
         syncCallbacks: true
-      };
-      const scrollbar = Scrollbar.init(this.$refs.inner, scrollOptions);
+      }
+      this.smoothScrollContainer = Scrollbar.init(this.$refs.inner, scrollOptions)
+    },
+    scrollTop() {
+      this.smoothScrollContainer.scrollTo(0, 0)
     },
     setDeviceHeight() {
-      if (this.$device.isDesktop) return;
+      if (this.$device.isDesktop) return
 
-      this.$setDeviceHeight(this.$refs.container);
+      this.$setDeviceHeight(this.$refs.container)
       this.$setDeviceHeight(this.$refs.inner, this.$refs.controllers.clientHeight)
-      this.$setDeviceHeight(this.$refs.masks);
+      this.$setDeviceHeight(this.$refs.masks)
 
-      this.resizeEvent();
+      this.resizeEvent()
     },
     resizeEvent(type = "init") {
       switch (type) {
         case "init":
-          window.addEventListener("resize", this.setDeviceHeight);
-          break;
+          window.addEventListener("resize", this.setDeviceHeight)
+          break
         case "destroy":
-          window.removeEventListener("resize", this.setDeviceHeight);
-          break;
+          window.removeEventListener("resize", this.setDeviceHeight)
+          break
       }
     }
   },
   destroyed() {
-    this.resizeEvent("destroy");
+    this.resizeEvent("destroy")
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -283,7 +291,7 @@ export default {
   button {
     width: 33.33333%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba($grey-01, 1);
     transition: all 0.2s ease-out;
     &.close {
       order: 2;
@@ -363,7 +371,7 @@ export default {
   .detail-inner {
     .work-wrapper {
       margin: auto;
-      width: 96%;
+      width: 94%;
     }
   }
 

@@ -79,7 +79,7 @@ export default {
     }).then(posts => {
       return { worksData: posts.items }
     }).catch(e => {
-      error({ statusCode: 404, message: 'データが取得できません' })
+      error({ statusCode: 404, message: 'データが取得できませんでした。' })
     })
   },
   data() {
@@ -122,11 +122,23 @@ export default {
     }
   },
   created () {
+    this.checkDevice()
     this.imgLoad()
   },
   mounted () {
+    this.setDeviceHeight()
   },
   methods: {
+    checkDevice() {
+      // Edge / IE の場合、404画面に遷移させる
+      const deviceType = this.$ua.browser()
+      if (deviceType === 'Internet Explorer' || deviceType === 'Edge') {
+        this.$nuxt.error({
+          statusCode: 404,
+          message: '当ブラウザは対応していません。申し訳ございませんが、Google Chromeで開き直してください。'
+        })
+      }
+    },
     imgLoad() {
       const imgList = []
       this.worksData.forEach( (item) => {
@@ -185,6 +197,11 @@ export default {
         this.scrollY = offset.y
 
       })
+    },
+    setDeviceHeight() {
+      if (this.$device.isDesktop) return
+
+      this.$setDeviceHeight(this.$refs.container)
     }
   },
   destroyed () {

@@ -1,17 +1,3 @@
-// ! Global variables
-// [$]: value
-// [@]: 関連ファイルパス
-// [!]: ヒント
-// ------------------------------
-
-// ### Breakpoints
-// [@]: @mixins/_mediaquery
-// [!]: @include mq(key) {} の引数のdefaultは[sm]です。
-// [!]: 設定したkeyが読み込み時の引数指定名です。
-
-// [@]: @gridlex/_gridlex-vars
-// [!]: lg,md,sm,xsの値はグリッドシステムにも共通で使用されます。
-
 $breakpoints: (
 	'lg': 'screen and (max-width: 1280px)',     // large size
 	'md': 'screen and (max-width: 960px)',     // medium size

@@ -1,5 +1,7 @@
 <template lang="pug">
-  header
+  header(
+    ref="header"
+  )
     .wrapper
       h1.anime-fadeIn_s(
         ref="name"
@@ -36,6 +38,7 @@ export default {
   },
   mounted () {
     this.initAnime()
+    this.setDeviceHeight()
   },
   methods: {
     initAnime() {
@@ -45,6 +48,11 @@ export default {
       ] 
 
       this.$fadeInAnime(targets)
+    },
+    setDeviceHeight() {
+      if (this.$device.isDesktop) return
+
+      this.$setDeviceHeight(this.$refs.header)
     }
   },
   destroyed () {
@@ -87,7 +95,7 @@ header {
 
 @include mq($breakpoint: sm) {
   header {
-    height: 76vh;
+    height: 100vh;
 
     .wrapper {
       h1 {

@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="container-wrapper">
-      <h2 class="notfound">Not Found</h2>
-      <div class="action-box">
-        <nuxt-link to="/">Top Page</nuxt-link>
-      </div>
+      <h2 class="notfound">{{ error.message }}</h2>
     </div>
   </div>
 </template>
@@ -12,17 +9,8 @@
 <script>
 // component
 // library
-import {mapGetters} from 'vuex'
 export default {
-  props: ['error'],
-  components: {
-  },
-  computed: {
-    ...mapGetters({
-    })
-  },
-  created() {
-  },
+  props: ['error']
 }
 </script>
 
@@ -33,9 +21,9 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   .notfound {
-    font-size: 6.6rem;
-    font-family: "objektiv-mk1";
-    font-weight: 800;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
   }
 }
 
@@ -45,13 +33,10 @@ export default {
 
 @include mq($breakpoint: md) {
   .container-wrapper {
+    padding: 0 20px;
     width: 100%;
-    text-align: center;
     .notfound {
-      font-size: 3.8rem;
-    }
-    .action-box {
-      margin: 11% auto 3%;
+      font-size: 2.0rem;
     }
   }
 }

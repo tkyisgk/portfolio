@@ -7,14 +7,14 @@ export const polyfill =  Vue.mixin({
         do {
           // nodeとselectorがマッチしたら返す
           if ((node.matches || node.msMatchesSelector).call(node, _selector)) {
-            return node;
+            return node
           }
           // マッチしなかったら親要素を代入
-          node = node.parentElement || node.parentNode;
-        } while (node !== null && node.nodeType === 1);
+          node = node.parentElement || node.parentNode
+        } while (node !== null && node.nodeType === 1)
 
-        return null;
-      }).call(node, selector);
+        return null
+      }).call(node, selector)
     },
   }
 })

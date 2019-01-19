@@ -72,6 +72,7 @@ module.exports = {
   plugins: [
     '~/plugins/mixin',
     '~/plugins/contentful',
+    '~/plugins/ga',
   ],
   /*
   ** Build configuration
@@ -83,7 +84,8 @@ module.exports = {
      */
     vendor: [
       'gsap',
-      'pixi.js'
+      'pixi.js',
+      'smooth-scrollbar'
     ],
     /*
     ** Run ESLint on save

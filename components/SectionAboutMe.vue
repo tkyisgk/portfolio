@@ -6,17 +6,15 @@
         p 
           | 東京都内でWEBエンジニアをしています。
           br
-          | 求めていることを的確に提供し、
+          | 業務では主にAngularを用いたサービス開発を行なっています。
           br
-          | なにも考えずに目的を達成でき、
+          | 運用性や拡張性のあるコードを書けるように日々勉強しています。
           br
-          | サイト訪れたあとにほんの少しの余韻を持って帰ってもらえる。
+          | また、ユーモアのあるインタラクションを取り入れ、
           br
-          | そんなインタラクションを提供できるように日々勉強しております。
-          br
-          | SPAでWebサイトを構築することが得意です。
+          | ほんの少し刺激のあるサイト制作を目指しています。
       .introduction
-        h3 開発技術など
+        h3 開発技術
         dl
           dt Front
           dd
@@ -27,7 +25,7 @@
             | Angular / Vue / Nuxt
         dl
           dt Back
-          dd Java / PHP
+          dd Java
         dl
           dt CMS
           dd Wordpress / Contentful
@@ -43,8 +41,6 @@
 // components
 
 // library
-import {mapGetters} from 'vuex'
-import {TweenMax, Circ, Expo} from 'gsap'
 
 export default {
   data() {
@@ -151,7 +147,7 @@ section {
 
 @include mq($breakpoint: sm) {
   section {
-    padding: 0 0 600px;
+    padding: 0 0 612px;
   }
 
   .content-wrapper {
@@ -165,13 +161,13 @@ section {
         margin: 11% 0 0;
       }
       h3 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
       p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
       dl {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         dt {
           width: 52px;
         }

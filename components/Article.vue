@@ -49,20 +49,7 @@ export default {
     VueMarkdown
   },
   props: ["workData"],
-  data() {
-    return {
-    };
-  },
-  watch: {},
-  created() {
-  },
-  mounted() {
-  },
-  methods: {
-  },
-  destroyed() {
-  }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -176,6 +163,15 @@ article {
         color: $yellow;
         font-weight: 700;
       }
+      a {
+        text-decoration: underline;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+      }
     }
     ul {
       padding: 0 10px;
@@ -202,7 +198,8 @@ article {
       }
     }
     * {
-      margin: 20px 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
       & + h3 {
         margin: 6% 0 4%;
       }

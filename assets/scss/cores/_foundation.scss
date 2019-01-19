@@ -57,3 +57,10 @@ button {
 		border-radius: 8px;
 	}
 }
+@include mq($breakpoint: sm) {
+	.container {
+		.scrollbar-track {
+			display: none !important;
+		}
+	}
+}

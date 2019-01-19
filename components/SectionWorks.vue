@@ -82,6 +82,7 @@ export default {
     .title {
       order: 3;
       margin: 8px 0 0;
+      padding: 0 4px;
       font-size: 2.4rem;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -100,6 +101,7 @@ export default {
     .tag {
       order: 2;
       margin: 10px 0 0;
+      padding: 0 4px;
       font-size: 1.4rem;
       color: $yellow;
     }
@@ -125,7 +127,7 @@ export default {
     flex-direction: column;
     margin: auto;
     padding: 0 0 16%;
-    width: 96%;
+    width: 94%;
 
     &-item {
       margin: 0px 0 24px;

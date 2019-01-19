@@ -101,4 +101,14 @@ small {
   letter-spacing: 0.25em;
 }
 
+// * -------------------
+// * sp layout
+// * -------------------
+
+@include mq($breakpoint: sm) {
+  footer {
+    height: 234px;
+  }
+}
+
 </style>
