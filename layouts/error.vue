@@ -1,9 +1,7 @@
-<template>
-  <div>
-    <div class="container-wrapper">
-      <h2 class="notfound">{{ error.message }}</h2>
-    </div>
-  </div>
+<template lang="pug">
+  div
+    .container-wrapper
+      h2.notfound {{ error.message }}
 </template>
 
 <script>

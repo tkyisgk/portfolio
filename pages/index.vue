@@ -73,15 +73,6 @@ export default {
     WorkDetail,
     Footer
   },
-  asyncData({env}) {
-    return client.getEntries({
-      'content_type': env.CTF_BLOG_POST_TYPE_ID,
-    }).then(posts => {
-      return { worksData: posts.items }
-    }).catch(e => {
-      error({ statusCode: 404, message: 'データが取得できませんでした。' })
-    })
-  },
   data() {
     return {
       isShowDetail: false,
@@ -120,6 +111,15 @@ export default {
       await this.$delay(0)
       this.initSmoothScroll()
     }
+  },
+  asyncData({env}) {
+    return client.getEntries({
+      'content_type': env.CTF_BLOG_POST_TYPE_ID,
+    }).then(posts => {
+      return { worksData: posts.items }
+    }).catch(e => {
+      error({ statusCode: 404, message: 'データが取得できませんでした。' })
+    })
   },
   created () {
     this.checkDevice()
@@ -203,8 +203,6 @@ export default {
 
       this.$setDeviceHeight(this.$refs.container)
     }
-  },
-  destroyed () {
   }
 }
 </script>

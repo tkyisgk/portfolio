@@ -16,7 +16,6 @@
         span.tag {{ data['fields']['tags'][0]}}
         .release {{ data['fields']['publishDate'] | formatYM('.')  }}
 
-
 </template>
 
 <script>
@@ -33,12 +32,6 @@ export default {
     'worksData',
     'callBack'
   ],
-  data() {
-    return {
-    }
-  },
-  watch: {
-  },
   mounted () {
     this.initAnime()
   },
@@ -51,8 +44,6 @@ export default {
     showDetail(index) {
       this.$emit(this.callBack, index)
     }
-  },
-  destroyed () {
   }
 }
 </script>

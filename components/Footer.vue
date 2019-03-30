@@ -25,29 +25,9 @@
           href="https://500px.com/takuyaishigaki"
           target="_blank"
         )
-    small &copy; 2018 TAKUYA ISHIGAKI
+    small &copy; 2019 TAKUYA ISHIGAKI
 
 </template>
-
-<script>
-// components
-
-export default {
-  data() {
-    return {
-    }
-  },
-  watch: {
-  },
-  mounted () {
-  },
-  methods: {
-   
-  },
-  destroyed () {
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 footer {

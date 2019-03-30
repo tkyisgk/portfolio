@@ -19,12 +19,6 @@ export default {
   props: [
     'thumbnailUrl',
   ],
-  data() {
-    return {
-    }
-  },
-  watch: {
-  },
   mounted () {
     if (this.$device.isDesktop) {
       this.initPixi()
@@ -111,9 +105,6 @@ export default {
       thumbnail.style.backgroundImage = `url(${this.thumbnailUrl})`
       thumbnail.style.backgroundSize = `cover`
     }
-  },
-  destroyed () {
-    // window.removeEventListener('resize')
   }
 }
 </script>
@@ -126,7 +117,6 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  // z-index: -1;
 }
 
 </style>

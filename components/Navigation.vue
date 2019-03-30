@@ -22,16 +22,10 @@ export default {
     'activeNav',
     'smoothScrollContainer'
   ],
-  watch: {
-  },
-  mounted () {
-  },
   methods: {
    handlePageTransition(navIndex) {
      this.smoothScrollContainer.scrollTo(0, this.navList[navIndex].scrollTop, 600)
    }
-  },
-  destroyed () {
   }
 }
 </script>

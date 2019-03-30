@@ -59,8 +59,9 @@ article {
   max-width: 960px;
 
   .title {
-    font-size: 3.2rem;
-    font-weight: 700;
+    font-family: $accent-font-family;
+    font-size: 4.6rem;
+    font-weight: 300;
   }
 
   .article-head {
@@ -137,24 +138,25 @@ article {
     // contentfulのmarkdownで入力する
     h3 {
       position: relative;
-      margin: 0 0 4%;
+      margin: 0 0 2%;
       padding: 0 0 20px 0px;
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-family: $accent-font-family;
+      font-size: 3.4rem;
+      font-weight: 300;
       &::after {
         content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 6px;
+        height: 1px;
         background-color: rgba($text-base, 0.4);
       }
     }
 
     p {
       font-size: 1.6rem;
-      line-height: 2;
+      line-height: 1.8;
       letter-spacing: 0.1em;
       em {
         font-style: italic;
@@ -174,7 +176,7 @@ article {
       }
     }
     ul {
-      padding: 0 10px;
+      margin-left: 37px;
       list-style-type: disc;
       li {
         margin: 3px 0;
@@ -201,7 +203,7 @@ article {
       margin-top: 20px;
       margin-bottom: 20px;
       & + h3 {
-        margin: 6% 0 4%;
+        margin: 10% 0 2%;
       }
     }
   }
@@ -218,13 +220,13 @@ article {
     max-width: 100%;
 
     .title {
-      font-size: 2.4rem;
+      font-size: 3.0rem;
     }
 
     .article-head {
       flex-direction: column;
       align-items: flex-start;
-      margin: 10% 0 0;
+      margin: 12% 0 0;
 
       .head-detail {
         flex-grow: 1;
@@ -232,7 +234,7 @@ article {
           dl {
             padding: 0 0 0 4px;
             &:not(:first-child) {
-              margin: 18% 0 0;
+              margin: 8% 0 0;
             }
             dt {
               font-size: 1.2rem;
@@ -266,9 +268,9 @@ article {
       h3 {
         margin: 0 0 4%;
         padding: 0 0 16px 0px;
-        font-size: 1.6rem;
+        font-size: 2.6rem;
         &::after {
-          height: 4px;
+          height: 1px;
         }
       }
 
@@ -276,7 +278,7 @@ article {
         font-size: 1.3rem;
       }
       ul {
-        padding: 0 6%;
+        margin-left: 7%;
         li {
           margin: 8px;
           font-size: 1.3rem;
@@ -292,7 +294,7 @@ article {
       * {
         margin: 5% 0;
         & + h3 {
-          margin: 8% 0 5%;
+          margin: 12% 0 5%;
         }
       }
     }

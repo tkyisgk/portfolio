@@ -9,7 +9,7 @@
       h2.anime-fadeIn_s(
         class="anime-fadeIn"
         ref="lead"
-      ) I'm front-end engineer in Tokyo.
+      ) I'm front-end engineer based in Tokyo.
 
 </template>
 
@@ -20,22 +20,6 @@
 import {mapGetters} from 'vuex'
 
 export default {
-  data() {
-    return {
-    }
-  },
-  computed: {
-    ...mapGetters({
-      // isImgLoaded: 'isImgLoaded'
-    })
-  },
-  watch: {
-    // isImgLoaded() {
-    //   console.log('load')
-    //   // アニメーション開始
-    //   this.initAnime()
-    // }
-  },
   mounted () {
     this.initAnime()
     this.setDeviceHeight()
@@ -54,8 +38,6 @@ export default {
 
       this.$setDeviceHeight(this.$refs.header)
     }
-  },
-  destroyed () {
   }
 }
 </script>

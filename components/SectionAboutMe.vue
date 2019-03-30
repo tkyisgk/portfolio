@@ -37,28 +37,6 @@
 
 </template>
 
-<script>
-// components
-
-// library
-
-export default {
-  data() {
-    return {
-    }
-  },
-  watch: {
-  },
-  mounted () {
-  },
-  methods: {
-   
-  },
-  destroyed () {
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 section {
   position: relative;
@@ -134,7 +112,7 @@ section {
           transform: translateY(-50%);
           width: 1px;
           height: 80%;
-          background-color: rgba(255, 255, 255, .8);
+          background-color: rgba(255, 255, 255, .4);
         }
       }
     }
