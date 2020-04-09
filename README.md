@@ -24,8 +24,6 @@ $ npm run generate
 
 ## 注意
 クローンして実行するときは、以下のファイルが必要になります。
-- フォント
-`/assets/fonts` 
 - 環境変数(contentfulのIDが必要)
 `/.env`
 
